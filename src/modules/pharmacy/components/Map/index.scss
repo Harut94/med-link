@@ -1,0 +1,79 @@
+.map-container {
+  //.map-wrapper {
+  //  height: calc(100% - 177px);
+  //}
+  .map-header {
+    //position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    color: var(--Neutral-90, #424242);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    background: var(--Neutral-10, #FFF);
+    .map-title-container {
+      border-bottom: 1px solid var(--Neutral-30, #EDEDED);
+      padding: 16px;
+    }
+    .map-input-container {
+      padding: 16px;
+      .map-input-description {
+        color: var(--Neutral-100, #000);
+        text-align: center;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+    }
+    .prescriptions-titles {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0 4px 0;
+    }
+  }
+
+  .marker-label {
+    margin-left: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: left;
+    color: var(--Neutral-90, #424242) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 16px !important;
+  }
+
+  .info-window {
+    color: var(--Neutral-90, #424242);
+    min-width: 225px;
+    .gm-ui-hover-effect {
+      margin-top: 20px
+    }
+    .info-pharmacy {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+    .info-address {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 12px;
+    }
+    .info-road {
+      display: flex;
+      .info-road-text {
+        margin-left: 8px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.pharmacy-offer-container {
+  background-color: var(--Neutral-20, #F3F3F3);
+  min-height: 100dvh;
+  .pharmacy-offer-header {
+    width: 100%;
+    color: var(--Neutral-90, #424242);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    background: var(--Neutral-10, #FFF);
+    .pharmacy-offer-title-container {
+      border-bottom: 1px solid var(--Neutral-30, #EDEDED);
+      padding: 16px;
+    }
+  }
+  .medicine {
+    padding: 16px;
+    .medicine-container {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--Neutral-30, #EDEDED);
+      background: var(--Neutral-10, #FFF);
+      .pay-action {
+        margin: 16px;
+      }
+      .medicine-description {
+        .pharmacy-name {
+          overflow: hidden;
+          color: var(--Neutral-90, #424242);
+          text-overflow: ellipsis;
+
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+          margin-bottom: 12px;
+        }
+        .medicine-item-label {
+          color: var(--Neutral-80, #616161);
+          white-space: nowrap;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: calc(70% - 18px);
+        }
+        .medicine-item-label-right {
+          color: var(--Neutral-80, #616161);
+          white-space: nowrap;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: right;
+        }
+        .medicine-item-middle-line {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex-grow: 1;
+          margin: 0 8px 0 8px;
+          min-width: 12px;
+          div {
+            width: 100%;
+            background: none;
+            border-top: 1px dashed #EDEDED;
+            margin: 10px 0;
+          }
+        }
+        .medicine-name {
+          overflow: hidden;
+          color: var(--Neutral-90, #424242);
+          text-overflow: ellipsis;
+
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          margin-bottom: 16px
+        }
+        .medicine-usage {
+          border-radius: 4px;
+          background: var(--Primary-Bg-color, #F5F7FB);
+          width: 100%;
+          color: var(--Neutral-80, #616161);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          div {
+            padding: 12px
+          }
+        }
+      }
+      .prescription-item-separator {
+        border-top: 1px solid var(--Neutral-30, #EDEDED);
+      }
+    }
+
+  }
+
+
+}

@@ -1,0 +1,170 @@
+.initial-info-container {
+  background-color: #FFFFFF;
+  width: 100%;
+  position: relative;
+  //min-height: 100dvh;
+  .initial-info-content {
+    padding: 40px 16px 100px 16px;
+    //min-height: calc(100dvh - 133px);
+    .initial-info-item {
+      display: flex;
+      color: var(--Neutral-100, #000);
+
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+
+      div {
+        display: flex;
+        align-items: center;
+        margin-left: 12px;
+      }
+    }
+    .initial-info-logo-description {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .initial-info-armed-logo {
+        display: flex;justify-content: center;
+        margin-bottom: 24px;
+      }
+      .initial-info-title {
+        color: var(--Neutral-90, #424242);
+        text-align: center;
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      .initial-info-description {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: var(--Neutral-80, #616161);
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        .bold-blue {
+          color: var(--Primary-Main, #1A63F5);
+        }
+      }
+    }
+    .initial-info-actions-container {
+      border-radius: 8px;
+      border: 1px solid var(--Neutral-30, #EDEDED);
+      margin-top: 24px;
+      .initial-info-actions-content {
+        padding: 16px;
+        overflow: hidden;
+        color: var(--Neutral-90, #424242);
+
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        .initial-info-payment {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 16px;
+          margin-top: 16px;
+          border-bottom: 1px solid var(--Neutral-30, #EDEDED);
+        }
+        .initial-info-pharmacy {
+          display: flex;
+          justify-content: space-between;
+          .pharmacies {
+            margin-top: auto;
+          }
+          img {
+            width: 54px;
+            height: 20px;
+          }
+        }
+        .initial-info-actions-partners {
+          margin-top: 2px;
+          color: var(--Neutral-70, #757575);
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid var(--Neutral-30, #EDEDED);
+        }
+      }
+    }
+  }
+  .initial-info-footer {
+    background-color: #FFF;
+    padding: 12px 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    color: var(--Neutral-70, #757575);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    border-top: 1px solid var(--Neutral-30, #EDEDED);
+    .label {
+      color: var(--Neutral-90, #424242);
+
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px; /* 133.333% */
+      margin-bottom: 8px;
+    }
+    .initial-info-pharmacies {
+      display: flex;
+      gap: 12px;
+      .initial-info-footer-item {
+        border-radius: 4px;
+        border: 1px solid var(--Neutral-20, #F3F3F3);
+        background: var(--Neutral-10, #FFF);
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        .alfa-logo {
+          img {
+            width: 53px;
+            height: 20px;
+          }
+        }
+        .asteria-logo {
+          align-items: center;
+          img {
+            width: 60px;
+            height: 13px;
+          }
+        }
+        .footer-image-container {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          margin: 8px 0;
+          .footer-soon {
+            margin-left: 8px;
+            border-radius: 100px;
+            background: var(--Danger-Bg-color, #FFEDEF);
+            padding: 2px 8px;
+            overflow: hidden;
+            color: var(--Danger-Main, #EB1730);
+            text-overflow: ellipsis;
+            font-size: 8px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; /* 200% */
+          }
+        }
+      }
+    }
+  }
+}

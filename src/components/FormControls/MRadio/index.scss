@@ -1,0 +1,22 @@
+.radio-container {
+  display: flex;
+  align-items: center;
+  input[type=radio] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid var(--Neutral-50, #C2C2C2);
+    background: var(--Neutral-10, #FFF);
+    margin: 0
+  }
+
+  input[type=radio]:checked {
+    border-color: gray;
+    background-image: url("/public/images/radio-checked.svg");
+    border: 1px solid var(--Neutral-50, #1A63F5);
+    background-position: center;
+
+  }
+}

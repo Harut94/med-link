@@ -1,0 +1,51 @@
+.prescriptions-container {
+  background-color: var(--Neutral-20, #F3F3F3);
+  min-height: 100dvh;
+  .prescriptions {
+    margin: 16px;
+  }
+  .prescriptions-header {
+    color: var(--Neutral-90, #424242);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    padding: 16px;
+    border-bottom: 1px solid var(--Neutral-30, #EDEDED);
+    background: var(--Neutral-10, #FFF);
+    .prescriptions-titles {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0 4px 0;
+      .language-picker-container {
+        width: 57px;
+        .language-picker-open-close {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .appointed-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+    color: var(--Neutral-70, #757575);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .medicine-pay-container {
+    border-top: 1px solid var(--Neutral-30, #EDEDED);
+    background-color: #FFF;
+    padding: 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+

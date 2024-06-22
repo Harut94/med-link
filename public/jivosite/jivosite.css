@@ -1,0 +1,42 @@
+/* hide the original widget - that there were no two labels on the screen*/
+#jivo_chat_widget {
+	display: block;
+}
+
+/* the default style - for offline messages if no one is online */
+#jivo_custom_widget {
+	position: fixed;
+	border-radius: 0 0 8px 8px;
+	left: 100%;
+	top: 30%;
+	background-color: #082617;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+	transform-origin: 0 0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg) translateX(-50%);
+	/*background-image: url(images/jivo_widget_offline.png);*/
+}
+
+#jivo_custom_widget div {
+	transform: rotate(180deg);
+	padding: 4px 16px 6px 16px;
+}
+
+/*!* when you hover the label should be shifted to the right by 3px *!*/
+/*#jivo_custom_widget:hover{*/
+/*	right:0;*/
+/*}*/
+
+/* if there are operators online - show other label*/
+#jivo_custom_widget.jivo_online{
+	background-color: #082617;
+	color: #FFFFFF;
+	/*background-image: url(images/jivo_widget_online.png);*/
+}

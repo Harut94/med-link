@@ -1,0 +1,23 @@
+.button-container {
+  padding: 0;
+  color: var(--Neutral-30, #EDEDED);
+  min-height: 40px;
+  min-width: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  background: #0D6EFD;
+  border-radius: 4px;
+  background: var(--Primary-Main, #1A63F5);
+  .button-text {
+    padding: 10px 16px 10px 16px;
+  }
+  .success {
+    display: flex;
+    padding: 10px;
+  }
+  &:disabled {
+    background: var(--Neutral-30, #EDEDED);
+    color: var(--Neutral-60, #9E9E9E);
+  }
+}

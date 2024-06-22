@@ -1,0 +1,69 @@
+.pointer {
+  cursor: pointer;
+}
+
+.break-anywhere {
+  line-break: anywhere;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+
+.display-none {
+  display: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.pre-lined {
+  white-space: pre-line;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.non-visible {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.break-word {
+  word-wrap: break-word;
+}

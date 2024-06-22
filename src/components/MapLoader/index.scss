@@ -1,0 +1,35 @@
+.map-loader {
+  background-color: white;
+  display: flex;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  position: fixed;
+  align-items: center;
+  opacity: 0.8;
+  background: var(--Neutral-10, #FFF);
+  background-blend-mode: overlay;
+  /* Material_blur */
+  backdrop-filter: blur(25px);
+  .icon {
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+    display: flex;
+    justify-content: center;
+  }
+  .text {
+    text-align: center;
+    margin: 8px 16px 0 16px;
+    color: var(--Neutral-100, #000);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+}

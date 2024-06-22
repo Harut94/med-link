@@ -1,0 +1,14 @@
+.number-spinner-wrapper {
+    align-items: center;
+
+    .spinner-value {
+        overflow: hidden;
+        color: var(--Neutral-80, #616161);
+        min-width: 33px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0 8px;
+    }
+}

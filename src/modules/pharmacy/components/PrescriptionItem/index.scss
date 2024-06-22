@@ -1,0 +1,99 @@
+.prescription-item-container {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-30, #EDEDED);
+  background: var(--Neutral-10, #FFF);
+  margin-top: 16px;
+  .medicine-description {
+    margin: 16px;
+    .validity-date-description {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: var(--Neutral-70, #757575);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+
+    }
+    .medicine-item-label {
+      color: var(--Neutral-80, #616161);
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    .max-quantity-error {
+      color: var(--Danger-Main, #EB1730);
+
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    .zero-quantity {
+      color: var(--Warning-Main, #FFB800);
+
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    .medicine-item-label-right {
+      color: var(--Neutral-80, #616161);
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: right;
+    }
+    .medicine-item-middle-line {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 0 8px 0 8px;
+      min-width: 12px;
+      div {
+        width: 100%;
+        background: none;
+        border-top: 1px dashed #EDEDED;
+        margin: 10px 0;
+      }
+    }
+    .medicine-name {
+      color: var(--Neutral-90, #424242);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: 16px
+    }
+    .medicine-usage {
+      border-radius: 4px;
+      background: var(--Primary-Bg-color, #F5F7FB);
+      width: 100%;
+      color: var(--Neutral-80, #616161);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      div {
+        padding: 12px
+      }
+    }
+  }
+  .validity-date-action {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+
+    .validity-date-description-width {
+      max-width: 230px;
+    }
+  }
+  .prescription-item-separator {
+    border-top: 1px solid var(--Neutral-30, #EDEDED);
+    margin: 16px 0 12px 0;
+  }
+}

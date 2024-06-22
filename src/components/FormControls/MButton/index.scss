@@ -1,0 +1,25 @@
+.phone-button-container {
+  padding: 0;
+  color: var(--Primary-Main, #1A63F5);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: var(--Primary-Bg-color, #F5F7FB);
+  a {
+    text-decoration: none;
+    color: var(--Primary-Main, #1A63F5);
+  }
+  .button-text {
+    padding: 10px 16px 10px 16px;
+  }
+  .success {
+    display: flex;
+    padding: 10px;
+  }
+  &:disabled {
+    background: var(--Neutral-30, #EDEDED);
+    color: var(--Neutral-60, #9E9E9E);
+  }
+}
