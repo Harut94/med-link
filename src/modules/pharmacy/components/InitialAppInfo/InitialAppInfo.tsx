@@ -55,7 +55,7 @@ const InitialAppInfo: FC<IInitialAppInfo> = ({ onClose }) => {
           <div className="initial-info-footer-item">
             <div className="footer-image-container asteria-logo">
               <img src="/images/asteria-info-small-logo.svg" alt="" />
-              <div className="footer-soon">{t('soon')}</div>
+              {/*<div className="footer-soon">{t('soon')}</div>*/}
             </div>
           </div>
         </div>

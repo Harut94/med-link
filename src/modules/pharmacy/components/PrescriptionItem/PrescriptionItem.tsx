@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import './index.scss';
+import MNumberSpinner from '../../../../components/FormControls/MNumberSpinner/MNumberSpinner.tsx';
 import { type FC, useEffect, useMemo, useState } from 'react';
 import { type IPrescription } from '../../data/packagesTypes.ts';
 import { PharmacyFields } from '../../data/pharmacyEnums.ts';
@@ -89,6 +90,28 @@ const PrescriptionItem: FC<IPrescriptionItem> = ({ prescription }) => {
     <div className="prescription-item-container">
       <div className="medicine-description">
         <div className="medicine-name">{prescription[PharmacyFields.name]}</div>
+        <div className={classnames('validity-date-description')}>
+          {t('validityDate', { date: dateFormatter(prescription[PharmacyFields.validationDate]) })}
+        </div>
+        <div className="prescription-item-separator" />
+        <div className="medicine-usage">
+          <div>{prescription[PharmacyFields.description]}</div>
+        </div>
+        <div className="flex space-between m-t-12">
+          <div className="medicine-item-label flex flex-column content-center m-r-12">{t('quantity')}</div>
+          <MNumberSpinner
+            value={medicineCount}
+            minimumNumber={0}
+            maximumNumber={prescription[PharmacyFields.quantity]}
+            onChange={onCountChange}
+          />
+        </div>
+        {medicineCount > prescription[PharmacyFields.quantity] ? (
+          <div className="max-quantity-error p-t-8">
+            {t('moreThanQuantityError', { quantity: prescription[PharmacyFields.quantity] })}
+          </div>
+        ) : null}
+        {medicineCount === 0 ? <div className="zero-quantity p-t-8">{t('zeroQuantity')}</div> : null}
         <div className="flex space-between m-t-8">
           <div className="medicine-item-label">{t('mainIngredient')}</div>
           <div className="medicine-item-middle-line">
@@ -96,38 +119,13 @@ const PrescriptionItem: FC<IPrescriptionItem> = ({ prescription }) => {
           </div>
           <div className="medicine-item-label-right">{prescription[PharmacyFields.mainIngredient]}</div>
         </div>
-        <div className="flex space-between m-t-8 m-b-16">
+        <div className="flex space-between m-t-12">
           <div className="medicine-item-label">{t('medicineType')}</div>
           <div className="medicine-item-middle-line">
             <div />
           </div>
           <div className="medicine-item-label-right">{prescription[PharmacyFields.dosageForm]}</div>
         </div>
-        <div className="medicine-usage">
-          <div>{prescription[PharmacyFields.description]}</div>
-        </div>
-        <div className="prescription-item-separator" />
-        <div className={classnames('validity-date-description')}>
-          {t('validityDate', {
-            fromDate: dateFormatter(prescription[PharmacyFields.validFrom]),
-            toDate: dateFormatter(prescription[PharmacyFields.validationDate]),
-          })}
-        </div>
-        {/*<div className="flex space-between m-t-12">*/}
-        {/*  <div className="medicine-item-label flex flex-column content-center m-r-12">{t('quantity')}</div>*/}
-        {/*  <MNumberSpinner*/}
-        {/*    value={medicineCount}*/}
-        {/*    minimumNumber={0}*/}
-        {/*    maximumNumber={prescription[PharmacyFields.quantity]}*/}
-        {/*    onChange={onCountChange}*/}
-        {/*  />*/}
-        {/*</div>*/}
-        {/*{medicineCount > prescription[PharmacyFields.quantity] ? (*/}
-        {/*  <div className="max-quantity-error p-t-8">*/}
-        {/*    {t('moreThanQuantityError', { quantity: prescription[PharmacyFields.quantity] })}*/}
-        {/*  </div>*/}
-        {/*) : null}*/}
-        {/*{medicineCount === 0 ? <div className="zero-quantity p-t-8">{t('zeroQuantity')}</div> : null}*/}
       </div>
     </div>
   );

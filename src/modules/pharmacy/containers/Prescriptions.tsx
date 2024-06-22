@@ -18,6 +18,8 @@ import { AppPaths } from '../../../constants/constants.ts';
 import Loader from '../../../components/Loader/Loader.tsx';
 import InitialAppInfo from '../components/InitialAppInfo/InitialAppInfo.tsx';
 import { useEffect } from 'react';
+import { dateFormatter } from '../../../utils/normalizers.ts';
+import { PharmacyFields } from '../data/pharmacyEnums.ts';
 
 const Prescriptions = () => {
   const { t } = useTranslation();
@@ -72,10 +74,10 @@ const Prescriptions = () => {
       ) : (
         <>
           <div className="appointed-container">
-            <div>
-              {t('prescription')} #{id}
-            </div>
-            {/*<div>{dateFormatter(prescriptions[0]?.[PharmacyFields.validFrom])}</div>*/}
+            {/*<div>*/}
+            {/*  {t('prescription')} #{id}*/}
+            {/*</div>*/}
+            <div>{dateFormatter(prescriptions[0]?.[PharmacyFields.validFrom])}</div>
           </div>
           <div className="prescriptions p-b-76">
             {prescriptions.map((prescription, i) => (

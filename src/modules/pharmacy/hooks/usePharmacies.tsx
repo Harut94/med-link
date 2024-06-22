@@ -16,7 +16,7 @@ const usePharmacies = () => {
       [PharmacyFields.brands]: prescription[PharmacyFields.brands],
       [PharmacyFields.quantity]: prescription[PharmacyFields.quantity],
     }));
-
+    console.log(offer);
     setLoading(true);
     getPharmaciesService(offer)
       .then(({ data }) => {

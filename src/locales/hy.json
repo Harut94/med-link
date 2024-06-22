@@ -4,7 +4,7 @@
   "mainIngredient": "Հիմնական բաղադրիչ",
   "medicineType": "Տեսակը՝",
   "choose": "Ընտրել",
-  "validityDate": "Նշանակվել է {{fromDate}}, ուժի մեջ է  մինչև {{toDate}}",
+  "validityDate": "Դեղատոմսը ուժի մեջ է մինչև` {{date}}",
   "prescription": "Դեղատոմս",
   "wasAppointed": "Նշանակվել է",
   "buy": "Գնել",
