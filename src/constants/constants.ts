@@ -1,7 +1,7 @@
 // prod
-export const BASE_URL = import.meta.env.BASE_API_URL || 'https://medlink.dev.ameriabank.am/';
+// export const BASE_URL = import.meta.env.BASE_API_URL || 'https://medlink.dev.ameriabank.am/';
 //development
-// export const BASE_URL = import.meta.env.BASE_API_URL || 'https://medlinktest.dev.ameriabank.am/';
+export const BASE_URL = import.meta.env.BASE_API_URL || 'https://medlinktest.dev.ameriabank.am/';
 
 export enum AppPaths {
   prescriptions = 'prescriptions',

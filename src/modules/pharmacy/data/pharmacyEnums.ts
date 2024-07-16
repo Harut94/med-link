@@ -5,6 +5,8 @@ export enum PharmacyFields {
   rus = 'rus',
   documentId = 'documentId',
   strength = 'strength',
+  strengthUnit = 'strengthUnit',
+  strengthUnitCode = 'strengthUnitCode',
   name = 'name',
   description = 'description',
   quantity = 'quantity',

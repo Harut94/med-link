@@ -1,7 +1,13 @@
 import { type ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 // import { useController, useFormContext } from 'react-hook-form';
-import Select, { type SingleValue, type DropdownIndicatorProps, type GroupBase } from 'react-select';
+import Select, {
+  components,
+  type SingleValue,
+  type DropdownIndicatorProps,
+  type GroupBase,
+  type OptionProps,
+} from 'react-select';
 // import { type TOption } from '../../../modules/pharmacy/data/packagesTypes.ts';
 import './index.scss';
 import classnames from 'classnames';
@@ -11,27 +17,28 @@ export type TOption = { value: number; label: string };
 export type TOptions = TOption[];
 
 interface IMSelect<T> {
-  name: string;
+  selectedValue: TOption;
   options: T[];
   isDisabled?: boolean;
   label?: string;
   classNames?: Record<string, string>;
+  onChange: (value: SingleValue<TOption>) => void;
+  singleOption?: boolean;
 }
 
-const MSelect = <T,>({ name, options, isDisabled, label, classNames = {} }: IMSelect<T>) => {
+const MSelect = <T,>({
+  selectedValue,
+  options,
+  isDisabled,
+  label,
+  classNames = {},
+  onChange,
+  singleOption,
+}: IMSelect<T>) => {
   const { t } = useTranslation();
-  // const form = useFormContext();
-  //
-  // const {
-  //   field: { onChange, ref, ...restField },
-  //   fieldState: { error },
-  // } = useController({
-  //   name,
-  //   control: form.control,
-  // });
 
   const onChangeHandler = (value: SingleValue<TOption>) => {
-    // onChange(value);
+    onChange(value);
   };
 
   return (
@@ -39,13 +46,16 @@ const MSelect = <T,>({ name, options, isDisabled, label, classNames = {} }: IMSe
       <div className={classnames('select-label', { disabled: { isDisabled } })}>{label}</div>
       <Select
         components={{
-          DropdownIndicator,
+          DropdownIndicator: singleOption ? () => null : DropdownIndicator,
+          // @ts-ignore
+          Option,
         }}
         // @ts-ignore
         options={options}
         // @ts-ignore
         onChange={onChangeHandler}
         isDisabled={isDisabled}
+        value={selectedValue}
         classNames={{
           container: () => 'modal-select-container',
           control: () => classnames('modal-select-control'),
@@ -65,7 +75,22 @@ const MSelect = <T,>({ name, options, isDisabled, label, classNames = {} }: IMSe
 const DropdownIndicator = ({
   selectProps: { menuIsOpen },
 }: DropdownIndicatorProps<TOption, boolean, GroupBase<TOption>>): ReactElement => (
-  <div>{menuIsOpen ? <img src="/images/down-arrow.svg" alt="" /> : <img src="/images/down-arrow.svg" alt="" />}</div>
+  <div>
+    {menuIsOpen ? (
+      <img src="/images/down-arrow.svg" alt="" className="rotated-arrow" />
+    ) : (
+      <img src="/images/down-arrow.svg" alt="" className="arrow" />
+    )}
+  </div>
+);
+
+const Option = (props: OptionProps) => (
+  <components.Option {...props}>
+    <div className="flex space-between">
+      <div>{props.label}</div>
+      {props.isSelected ? <img src="/images/checkmark.svg" alt="" /> : null}
+    </div>
+  </components.Option>
 );
 
 export default MSelect;

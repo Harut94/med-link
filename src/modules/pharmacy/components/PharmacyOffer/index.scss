@@ -9,13 +9,32 @@
     font-weight: 600;
     line-height: 26px;
     background: var(--Neutral-10, #FFF);
+    .header-description-container {
+      padding: 12px 16px;
+      .header-description {
+        color: var(--Neutral-90, #424242);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        margin-bottom: 4px;
+      }
+      .header-pharmacy {
+        color: var(--Neutral-60, #9E9E9E);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+      }
+    }
     .pharmacy-offer-title-container {
       border-bottom: 1px solid var(--Neutral-30, #EDEDED);
       padding: 16px;
     }
   }
   .medicine {
-    padding: 16px;
+    padding: 16px 16px 100px;
+
     .medicine-container {
       width: 100%;
       border-radius: 8px;
@@ -24,17 +43,18 @@
       .pay-action {
         margin: 16px;
       }
+
       .medicine-description {
         .pharmacy-name {
           overflow: hidden;
-          color: var(--Neutral-90, #424242);
+          color: var(--Neutral-100, #000);
           text-overflow: ellipsis;
+          white-space: nowrap;
 
-          font-size: 16px;
+          font-size: 14px;
           font-style: normal;
-          font-weight: 600;
-          line-height: 24px;
-          margin-bottom: 12px;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
         }
         .medicine-item-label {
           color: var(--Neutral-80, #616161);
@@ -93,12 +113,48 @@
             padding: 12px
           }
         }
+        .medicine-price {
+          display: flex;
+          justify-content: space-between;
+          color: var(--Neutral-90, #424242);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+          margin: 0 16px 16px
+        }
+        .max-quantity-error {
+          color: var(--Danger-Main, #EB1730);
+
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+        }
+        .zero-quantity {
+          color: var(--Warning-Main, #FFB800);
+
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+        }
       }
       .prescription-item-separator {
         border-top: 1px solid var(--Neutral-30, #EDEDED);
       }
     }
 
+  }
+  .medicine-pay-container {
+    border-top: 1px solid var(--Neutral-30, #EDEDED);
+    background-color: #FFF;
+    padding: 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
   }
 
 

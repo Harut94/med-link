@@ -23,6 +23,8 @@ const Medicaments: FC<{ medicaments: IGroupMedicament; documentId: string }> = (
     setSelectedMedicine(newSelectedMedicine);
   };
 
+  const medicineOptions = (medicament: string) => medicament;
+
   return (
     <>
       {medicaments[PharmacyFields.medicaments]?.map((medicament: IMedicament, i: number) => {
@@ -36,6 +38,7 @@ const Medicaments: FC<{ medicaments: IGroupMedicament; documentId: string }> = (
             </div>
             <div className="medicine-item-label-right flex">
               <div className="flex items-center m-r-8">{medicament[PharmacyFields.price]} ֏</div>
+              {/*<MSelect options={medicineOptions(medicament[PharmacyFields.code])} selectedValue={{}} />*/}
               <MRadio
                 selectedValue={medicament[PharmacyFields.code] === selectedMedicine[documentId]?.[PharmacyFields.code]}
                 value={medicament[PharmacyFields.code]}

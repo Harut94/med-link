@@ -1,37 +1,6 @@
 .input-wrapper {
 
   width: 100%;
-  position: relative;
-  .input-fake-value-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    visibility: hidden;
-    user-select: none;
-    pointer-events: none;
-    font-size: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    }
-    .input-fake-value {
-      overflow: hidden;
-    }
-
-    .suffix {
-      visibility: visible;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      color: var(--Neutral-100, #000);
-
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-    }
   .input {
     width: 100%;
     height: 40px;
@@ -77,6 +46,14 @@
     color: var(--semanticTokens-surfaceInverse, #1C1C1C);
     font-size: 14px;
     margin-bottom: 8px;
+  }
+  .error-message {
+    margin-top: 8px;
+    color: var(--Danger-Main, #EB1730);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 133.333% */
   }
 }
 

@@ -13,7 +13,6 @@ const InitialAppInfo: FC<IInitialAppInfo> = ({ onClose }) => {
 
   return (
     <div className="initial-info-container">
-      {/*<MSelect options={[]} name="asd" />*/}
       <div className="initial-info-content">
         <div className="initial-info-logo-description">
           <div className="initial-info-armed-logo">

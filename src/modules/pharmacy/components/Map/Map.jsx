@@ -303,7 +303,7 @@ const Map = ({ onMapClose }) => {
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center || defaultMapCenter}
-              zoom={12}
+              zoom={13}
               onLoad={onLoad}
               onUnmount={onUnmount}
               onClick={onMapClick}

@@ -13,10 +13,16 @@
     }
 
     .modal-value-container {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        div:first-child {
+            color: var(--Neutral-100, #000);
+
+            background-color: #FFFFFF !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
     }
 
     .modal-select-container {
@@ -30,6 +36,7 @@
             border-radius: 8px;
             border: 1px solid var(--Neutral-50, #C2C2C2);
             background: var(--semanticTokens-surface, #FFF);
+            box-shadow: none;
             img {
                 margin: 4px 12px 0 0px;
             }
@@ -40,6 +47,37 @@
 
         &::placeholder {
             color: var(--semanticTokens-outlineError, #FA3434) !important;
+        }
+    }
+    .arrow {
+        display: flex;
+        margin: 0 12px 0 0 !important;
+    }
+    .rotated-arrow {
+        rotate: 180deg;
+    }
+    .modal-select-menu {
+        margin-top: 3.5px !important;
+        border-radius: 12px;
+        background: var(--Neutral-10, #FFF);
+
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+    }
+    .modal-select-menu-list {
+        display: flex;
+        flex-direction: column;
+        margin: 16px;
+        gap: 8px;
+        padding: 0 !important;
+        div {
+            padding: 0 !important;
+            color: var(--Neutral-100, #000);
+
+            background-color: #FFFFFF !important;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
         }
     }
 }

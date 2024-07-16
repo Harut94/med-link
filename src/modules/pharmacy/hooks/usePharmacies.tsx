@@ -14,7 +14,7 @@ const usePharmacies = () => {
     const offer: IOffer[] = prescriptions.map((prescription) => ({
       [PharmacyFields.documentId]: prescription[PharmacyFields.documentId],
       [PharmacyFields.brands]: prescription[PharmacyFields.brands],
-      [PharmacyFields.quantity]: prescription[PharmacyFields.quantity],
+      // [PharmacyFields.quantity]: prescription[PharmacyFields.quantity],
     }));
 
     setLoading(true);

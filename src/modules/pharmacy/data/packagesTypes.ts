@@ -46,6 +46,12 @@ export interface IMedicament {
     [PharmacyFields.rus]: string;
   };
   [PharmacyFields.price]: number;
+  [PharmacyFields.quantity]: number;
+  [PharmacyFields.value]?: string;
+  [PharmacyFields.label]?: string;
+  [PharmacyFields.strength]?: string;
+  [PharmacyFields.strengthUnit]?: string;
+  [PharmacyFields.strengthUnitCode]?: string;
   [PharmacyFields.producer]: {
     [PharmacyFields.arm]: string;
     [PharmacyFields.eng]: string;
@@ -55,7 +61,7 @@ export interface IMedicament {
 
 export interface IOffer {
   [PharmacyFields.documentId]: string;
-  [PharmacyFields.quantity]: number;
+  // [PharmacyFields.quantity]: number;
   [PharmacyFields.brands]: string[];
 }
 

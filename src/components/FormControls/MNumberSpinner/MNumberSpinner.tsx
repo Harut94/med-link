@@ -26,7 +26,7 @@ const MNumberSpinner: FC<MCheckbox> = ({ value, minimumNumber, maximumNumber, on
       return;
     }
 
-    const newValue: number = minus ? value - 1 : value + 1;
+    const newValue: number = minus ? +value - 1 : +value + 1;
     onChange?.(newValue, type);
   };
 
@@ -35,7 +35,7 @@ const MNumberSpinner: FC<MCheckbox> = ({ value, minimumNumber, maximumNumber, on
       <div className="number-spinner cursor flex m-r-8" onClick={changeHandler('minus')}>
         <img
           src={
-            value === minimumNumber ? '/images/number-spinner-minus-disabled.svg' : '/images/number-spinner-minus.svg'
+            +value === minimumNumber ? '/images/number-spinner-minus-disabled.svg' : '/images/number-spinner-minus.svg'
           }
           alt=""
         />
@@ -45,7 +45,8 @@ const MNumberSpinner: FC<MCheckbox> = ({ value, minimumNumber, maximumNumber, on
         className="flex"
         regexp={NUMERIC_REGEXP(0, 10000000)}
         onChange={(event) => onChange(+event.target.value)}
-        warning={!value}
+        warning={!+value}
+        suffix={t('count')}
       />
       <div className="number-spinner cursor flex m-l-8" onClick={changeHandler('plus')}>
         <img

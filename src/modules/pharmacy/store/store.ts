@@ -44,6 +44,11 @@ export const selectedMedicineAtom = atom<Record<string, IMedicament>>({
   default: {},
 });
 
+export const selectedMedicineStrengthAtom = atom<Record<string, IMedicament>>({
+  key: 'selectedMedicineStrength',
+  default: {},
+});
+
 export const selectedPrescriptionsAtom = atom<IPrescription[]>({
   key: 'selectedPrescriptions',
   default: [],

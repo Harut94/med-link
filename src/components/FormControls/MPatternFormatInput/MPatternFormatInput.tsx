@@ -1,79 +1,83 @@
-import { useController, useFormContext } from 'react-hook-form';
-import { NumericFormat, PatternFormat } from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 import { useTranslation } from 'react-i18next';
 
-import '../MInput/index.scss';
+import './index.scss';
 import { type FC } from 'react';
 import classnames from 'classnames';
 
 interface IMPatternFormatInput {
-  name: string;
-  label: string;
-  customOnChange?: (value: string) => void;
+  onChange?: (value: string) => void;
   format?: string;
   disabled?: boolean;
   numericFormat?: boolean;
   decimalScale?: number;
+  value: number;
+  regexp?: RegExp;
+  className?: string;
+  warning: boolean;
+  suffix?: string;
 }
 
 const MPatternFormatInput: FC<IMPatternFormatInput> = ({
-  name,
-  label,
-  customOnChange,
+  onChange,
   format = '',
   numericFormat,
   decimalScale = 0,
+  value,
+  regexp,
+  className,
+  warning,
+  suffix,
   ...props
 }) => {
   const { t } = useTranslation();
-  const form = useFormContext();
 
-  const {
-    field: { onChange, ref, ...restField },
-    fieldState: { error },
-  } = useController({ control: form.control, name });
-
-  if (numericFormat) {
-    return (
-      <div className="input-wrapper">
-        <div className="input-label">{t(label)}</div>
-        <NumericFormat
-          {...props}
-          {...restField}
-          value={restField.value}
-          onValueChange={(values) => {
-            onChange(values.value);
-            customOnChange?.(values.value);
-          }}
-          valueIsNumericString={true}
-          className={classnames('input', { 'with-error': error?.message })}
-          thousandSeparator=","
-          decimalScale={decimalScale}
-        />
-        <div className="error-message">{error?.message}</div>
-      </div>
-    );
-  }
+  const handleChange = (value: string) => {
+    if (regexp) {
+      if (value.match(regexp) || !value) {
+        void onChange?.(value);
+      }
+    } else {
+      void onChange?.(value);
+    }
+  };
 
   return (
-    <div className="input-wrapper">
-      <div className="input-label">{t(label)}</div>
-      <PatternFormat
-        {...props}
-        {...restField}
-        format={format}
-        value={restField.value}
+    <div className={classnames('input-wrapper', className, { warning })}>
+      <NumericFormat
+        className={classnames('input')}
+        value={value}
         onValueChange={(values) => {
-          onChange(values.value);
-          customOnChange?.(values.value);
+          handleChange(values.value);
         }}
         valueIsNumericString={true}
-        className={classnames('input', { 'with-error': error?.message })}
-        allowEmptyFormatting
+        // className={classnames('input', { 'with-error': error?.message })}
+        // thousandSeparator=","
+        decimalScale={decimalScale}
+        suffix={suffix}
       />
-      <div className="error-message">{error?.message}</div>
+      {/*<div className="error-message">{error?.message}</div>*/}
     </div>
   );
+  // }
+
+  // return (
+  //   <div className="input-wrapper">
+  //     <div className="input-label">{t(label)}</div>
+  //     <PatternFormat
+  //       {...props}
+  //       format={format}
+  //       value={value}
+  //       onValueChange={(values) => {
+  //         handleChange(values.value);
+  //       }}
+  //       valueIsNumericString={true}
+  //       // className={classnames('input', { 'with-error': error?.message })}
+  //       allowEmptyFormatting
+  //     />
+  //     {/*<div className="error-message">{error?.message}</div>*/}
+  //   </div>
+  // );
 };
 
 export default MPatternFormatInput;
